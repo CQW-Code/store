@@ -1,0 +1,13 @@
+<h2>Click a Department To View items</h2>
+<br />
+<%= link_to 'Create a new department', new_shop_department_path(@shop) %>
+<br />
+
+<ul>
+  <% @departments.each do |department| %>
+    <li><%= link_to department.name, [@shop, department] %></li>
+  <% end %>
+
+  <%= link_to 'Back to store list', shop_path(@shop) %>
+
+</ul>

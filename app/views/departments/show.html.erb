@@ -1,0 +1,13 @@
+<h2><%= @shop.name %> - <%= @department.name %></h2>
+<p><%= @department.body %></p>
+<br />
+<h3>Items</h3>
+<% @department.items.each do |item| %>
+  <%= render 'items/item', { item: item } %>
+<% end %>
+
+<%= link_to 'Add Item', new_department_item_path(@department) %>
+<%= link_to 'Edit Department', edit_shop_department_path([@shop, @department]) %>
+<%= link_to 'Delete Department', [@shop, @department], method: :delete %>
+<%= link_to 'Back', shop_departments_path(@shop) %>
+

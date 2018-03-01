@@ -1,3 +1,14 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  root 'shops#index'
+
+  resources :shops do
+   resources :departments
+  end
+
+  scope 'department/:department_id', as: 'department' do
+    resources :items, only: [:new, :create]
+  end
 end
+
+

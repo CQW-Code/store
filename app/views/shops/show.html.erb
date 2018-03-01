@@ -1,0 +1,11 @@
+<h1><%= @shop.name %></h1>
+<hr />
+<p>What would you like to do?</p>
+<%= link_to 'View Departments', shop_departments_path(@shop) %>
+ <br /> 
+  <%= link_to 'Create new store', new_shop_path(@shop) %>
+<br />
+<%= link_to 'Edit Store', edit_shop_path(@shop) %>
+<br />
+<%= link_to 'Delete Store', @shop, method: :delete %>
+<br />  <%= link_to 'Back', root_path(@shop) %>
